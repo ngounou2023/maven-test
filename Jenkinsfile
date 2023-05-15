@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/ngounou2023/maven-test.git'
             }
         }
-        stage (SonarQube scan) {
+        stage ('SonarQube scan') {
             steps{
                 withSonarQubeEnv('sonarQube') {
             sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ngounou2023_geolocation1'
